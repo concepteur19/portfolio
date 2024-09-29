@@ -1,210 +1,131 @@
 import React from "react";
-import Title from "../components/Title";
-
-import "../styles/about.css";
-
-//front-end
-import html from "../assets/images/icons/html5-logo-html-logo-0.png";
-import css from "../assets/images/icons/icons8-css3-144.png";
-import tailwind from "../assets/images/icons/icons8-tailwindcss-96.png";
-import bootstrap from "../assets/images/icons/icons8-bootstrap-144.png";
-import javascript from "../assets/images/icons/icons8-javascript-144.png";
-import react from "../assets/images/icons/icons8-react-100.png";
-import next from "../assets/images/icons/nextjs.png";
-import angular from "../assets/images/icons/icons8-angular-96.png";
-import typescript from "../assets/images/icons/typescript_original_logo_icon_146317.png";
-
-//back-end
-import node from "../assets/images/icons/icons8-nodejs-96.png";
-import ex from "../assets/images/icons/ex.png";
-import laravel from "../assets/images/icons/icons8-laravel-100 (1).png";
-import sql from "../assets/images/icons/icons8-mysql-logo-96.png";
-import mongo from "../assets/images/icons/icons8-mongodb-144.png";
+import Title from "@/components/base/Title";
+import ProjectCard from "../base/projects/ProjectCard";
+import parcoursData from "@/data/CertificaionsData";
+import projectsData from "@/data/ProjectsData";
+import Image from "next/image";
+import {
+  BsBackpack,
+  BsCode,
+  BsCodeSlash,
+  BsCodeSquare,
+  BsFolder,
+  BsPersonWorkspace,
+} from "react-icons/bs";
+import experiencePro from "@/data/ExperienceData";
+import { GrMysql, GrReactjs } from "react-icons/gr";
+import {
+  BiLogoBootstrap,
+  BiLogoReact,
+  BiLogoRedux,
+  BiLogoTailwindCss,
+  BiLogoTypescript,
+} from "react-icons/bi";
+import { RiNextjsFill } from "react-icons/ri";
+import { IoLogoLaravel } from "react-icons/io5";
+import { TbBrandMysql } from "react-icons/tb";
+import { DiMysql } from "react-icons/di";
 
 function About() {
   return (
-    <div id="about-section" >
-      <div className="about-container">
-        <span className="before-title">Get to know</span>
-        <Title title="About Me" class="titles-about"></Title>
-        <div className="ex-cl-pr">
-          <div className="card card-stats ">
-            <span></span>
-            <span className="text-stat-1">Experience</span><br />
-            <span>1+ Year Working</span>
-          </div>
-
-          <div className="card card-stats">
-            <span></span>
-            <span className="text-stat-1">Clients</span> <br />
-            <span>Just 5 Actually</span>
-          </div>
-
-          <div className="card card-stats">
-            <span></span>
-            <span className="text-stat-1">Projects</span> <br />
-            <span>6+ Completed</span>
-          </div>
-        </div>
-        <div className="edu-work">
-          <div className="work">
-            <Title title="Work experience" class="title-left" > </Title>
-            <div className="education-container">
-              {/* <div className="line"> */}
-                <div className="year">
-                  <span>
-                    08-2023 to Now <br />
-                    <span className="opacity">Bonamoussadi, Douala</span>
+    <div className=" space-y-16 ">
+      <div className=" space-y-8 ">
+        <Title title="Mon parcours scolaire" className="text-2xl" />
+        <div className=" space-y-8">
+          {parcoursData.map((data, id) => {
+            return (
+              <div key={id} className="flex space-x-8 space-x-12">
+                <p className=" text-base p-1 text-stone-500 "> {data.year} </p>
+                <div className=" flex flex-col space-y-2 ">
+                  <span className=" text-lg font-barlowMedium ">
+                    {data.certificate}
                   </span>
+                  <span className=" text-[15px] "> {data.school} </span>
                 </div>
-
-                <div className="certification">
-                  <span>
-                    {" "}
-                    Frontend Web developper <br />
-                    <sapn className="opacity">2SI-inc</sapn>
-                  </span>{" "}
-                </div>
-              {/* </div> */}
-              {/* <div className="line"> */}
-                <div className="year">
-                  <span>
-                    02-2023 to 06-2023 <br />
-                    <span className="opacity">Bonamoussadi, Douala</span>
-                  </span>
-                </div>
-
-                <div className="certification">
-                  <span>
-                    {" "}
-                    Intern web and mobile developper <br />
-                    <sapn className="opacity">2SI-inc</sapn>
-                  </span>{" "}
-                </div>
-              {/* </div> */}
-              {/* <div className="line"> */}
-                <div className="year">
-                  <span>
-                    07-2022 to 08-2022 <br />
-                    <span className="opacity"> Banganté, West - CMR</span>
-                  </span>
-                </div>
-
-                <div className="certification">
-                  <span>
-                    {" "}
-                    Intern web developper <br />
-                    <sapn className="opacity">GLOOM SARL</sapn>
-                  </span>{" "}
-                </div>
-              {/* </div>
-              <div className="line"> */}
-                <div className="year">
-                  <span>
-                    07-2021 to 08-2021 <br />
-                    <span className="opacity"> Bonapriso, Douala</span>
-                  </span>
-                </div>
-
-                <div className="certification">
-                  <span>
-                    {" "}
-                    Intern web developper <br />
-                    <sapn className="opacity">LUGAR SARL</sapn>
-                  </span>{" "}
-                </div>
-              {/* </div> */}
-            </div>
-          </div>
-
-          <div className="education">
-            <Title title="Education" class="title-left" />
-            <div className="education-container">
-              {/* <div className="line"> */}
-                <div className="year">
-                  <span>
-                    2023 <br />
-                    <span className="opacity">Douala, Cameroun</span>
-                  </span>
-                </div>
-
-                <div className="certification">
-                  <span>
-                    {" "}
-                    Computer Engineering <br />
-                    <sapn className="opacity">
-                      Ecole Nationale Supérieure Polytechnique de Douala
-                    </sapn>
-                  </span>{" "}
-                </div>
-              {/* </div>
-
-              <div className="line"> */}
-                <div className="year">
-                  <span>
-                    2016 <br />
-                    <span className="opacity">Bonaberi, Douala</span>
-                  </span>
-                </div>
-
-                <div className="certification">
-                  <span>
-                    {" "}
-                    Baccalauréat C(scientifique) <br />
-                    <sapn className="opacity">GBHS of Bonaberi</sapn>
-                  </span>{" "}
-                </div>
-              {/* </div> */}
-            </div>
-          </div>
-        </div>
-
-        <div className="about-container">
-          <span className="before-title">What skills i have</span>
-          <Title title="Skills" class="title title-s" > </Title>
-
-          <div className="skillsSection"> 
-            <div className="card card-skills">
-              <Title title="Front-end Development" class="titles-skills" />
-
-              
-              <div style={{textAlign: 'left', display: 'grid', gridTemplateColumns: '1fr 1fr', gridColumnGap: '50px', gridRowGap: '10px'}}>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={html} alt="" /> HTML</div>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={css} alt="" /> CSS</div>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={javascript} alt="" /> Javascript</div>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={typescript} alt="" /> Typescript</div>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={bootstrap} alt="" /> Bootstrap </div>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={tailwind} alt="" /> Tailwind</div>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={angular} alt="" />Angular</div>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={react} alt="" /> React Js</div>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={next} alt="" />Next Js</div>
               </div>
-            </div>
-
-            <div className="card card-skills">
-              <Title title="Backend Development" class="titles-skills"> </Title>
-
-              <div style={{textAlign: 'left', display: 'grid', gridTemplateColumns: '1fr 1fr', gridColumnGap: '50px', gridRowGap: '10px'}}>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={node} alt="" /> Node Js</div>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={ex} alt="" /> Express Js</div>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={laravel} alt="" /> Laravel</div>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={sql} alt="" /> MySQL</div>
-                <div style={{display: 'flex', justifyContent: 'left', alignItems: 'center'}}> <img className="taille-img" src={mongo} alt="" />Mongo DB</div>
-              </div>
-                
-            </div>
-          </div>
-          
+            );
+          })}
         </div>
+      </div>
 
-        {/* <div className="about-container" >
-          <span className="before-title">Which services i provide</span>
-          <Title title="Services" class="title title-s" />
-          animation: fade-in-contact 1s ease-in forwards animation:
-          fade-in-contact 1s ease-in forwards; animation: fade-in-contact 1s
-          ease-in forwards; animation: fade-in-contact 1s ease-in forwards;
-          ease-in forwards;
-        </div> */}
+      <div className=" space-y-8 ">
+        <Title title="Mon projets phares" className="text-2xl" />
+        <div className=" grid grid-flow-row grid-cols-3 gap-8">
+          {projectsData.map((data, id) => {
+            return (
+              <ProjectCard
+                key={id}
+                src={data.imgSrc}
+                name={data.name}
+                description={data.description}
+                projectType={data.projectType}
+                technos={data.technos}
+                colorProjectType={data.colorProjectType}
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      <div className=" space-x-8 flex items-start grid grid-flow-row grid-cols-2 ">
+        <div className=" border rounded-lg p-4 space-y-3">
+          <div className=" flex items-center text-stone-500 space-x-2">
+            {/* <Image src="" alt="12" className=" rounded-full h-5 w-5 border " ></Image> */}
+            <BsFolder size={22} />
+            <Title
+              title="Expériences Professionnelle"
+              className="text-lg font-barlowMedium "
+            />
+          </div>
+
+          <p className=" w-[23rem]#">
+            {
+              "j'accumule près de 18 mois d'expérience, expérience comprenant des stages académiques, contrat de préemplois et freelance."
+            }
+          </p>
+
+          <div className=" space-y-2">
+            {experiencePro.map((data, id) => {
+              return (
+                <div key={id} className="flex space-x-8 space-x-12">
+                  <p className=" w-28 text-sm p-1 text-stone-500 ">
+                    {" "}
+                    {data.structure}{" "}
+                  </p>
+                  <div className=" flex flex-col space-y- ">
+                    <span className=" text-base font-barlowMedium ">
+                      {data.poste}
+                    </span>
+                    <span className=" text-[13px] "> {data.year} </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className=" border rounded-lg p-4 space-y-3">
+          <div className=" flex items-center text-stone-500 space-x-2">
+            {/* <Image src="" alt="12" className=" rounded-full h-5 w-5 border " ></Image> */}
+            <BsCodeSlash size={22} />
+            <Title
+              title="Ma Stack Technique"
+              className="text-lg font-barlowMedium "
+            />
+          </div>
+
+          <p className=" w-[23rem]#">
+            {
+              "Je me défini comme quelqu'un qui apprend vite et qui peut etre assez polivalent , ce qui ne m'empêche pas d'avoir des technologies préférentielles."
+            }
+          </p>
+
+          <div className=" flex items-center space-x-4 ">
+            <BiLogoReact size={32} /> <BiLogoRedux size={32} />{" "}
+            <RiNextjsFill size={32} /> <BiLogoTailwindCss size={32} />{" "}
+            <BiLogoBootstrap size={32} /> <IoLogoLaravel size={32} />{" "}
+            <BiLogoTypescript size={32} /> <GrMysql size={32} />
+          </div>
+        </div>
       </div>
     </div>
   );

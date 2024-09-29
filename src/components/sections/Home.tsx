@@ -1,126 +1,281 @@
-import React from "react";
+import React, { useState } from "react";
+import Title from "@/components/base/Title";
+import ProjectCard from "../base/projects/ProjectCard";
+import parcoursData from "@/data/CertificaionsData";
+import projectsData from "@/data/ProjectsData";
+import {
+  BsArrowRight,
+  BsCodeSlash,
+  BsDownload,
+  BsFolder,
+} from "react-icons/bs";
+import experiencePro from "@/data/ExperienceData";
+import { GrMysql } from "react-icons/gr";
+import {
+  BiLogoBootstrap,
+  BiLogoReact,
+  BiLogoRedux,
+  BiLogoTailwindCss,
+  BiLogoTypescript,
+} from "react-icons/bi";
+import { IoLogoLaravel } from "react-icons/io5";
+import { TbBrandNextjs } from "react-icons/tb";
+import Image from "next/image";
+import { useTheme } from "@/contexts/themeContext";
 
-//import TypingText from "../components/TypingText";
-import Button from "../components/Button";
+const stack = [
+  {
+    name: "React js",
+    icone: <BiLogoReact key={1} size={32} className=" hover:text-[#4da1f1] " />,
+  },
+  {
+    name: "Redux",
+    icone: <BiLogoRedux key={2} size={32} className=" hover:text-[#5e72e4] " />,
+  },
+  {
+    name: "Next js",
+    icone: <TbBrandNextjs key={3} size={32} className=" hover:text-[#111] " />,
+  },
+  {
+    name: "TailwindCss",
+    icone: (
+      <BiLogoTailwindCss key={4} size={32} className=" hover:text-[#4da1f1] " />
+    ),
+  },
+  {
+    name: "Bootstrap",
+    icone: (
+      <BiLogoBootstrap key={5} size={32} className=" hover:text-[#5e72e4] " />
+    ),
+  },
+  {
+    name: "Laravel",
+    icone: (
+      <IoLogoLaravel key={6} size={32} className=" hover:text-[#e30613] " />
+    ),
+  },
+  {
+    name: "Typescript",
+    icone: (
+      <BiLogoTypescript key={7} size={32} className=" hover:text-[#1e73c3] " />
+    ),
+  },
+  {
+    name: "Mysql",
+    icone: <GrMysql size={32} key={8} className=" hover:text-[#0d569a] " />,
+  },
+];
 
-import img from "../assets/images/pro.jpeg";
-import "../styles/home.css";
-// import cv from "../assets/cv.pdf";
-// import
+function Home({ profileImg }: { profileImg: string }) {
+  const [visible, setVisible] = useState<boolean>(false);
+  const [idStack, setIdStack] = useState<number>();
+  const [mouseOver, setMouseOver] = useState<boolean>(false);
 
-function Home() {
-  // const styleDark = {
-  //   boxShadow: "1px 1px 8px rgb(20, 1, 188)",
-  // };
+  const handleMouseEnter = (id: number) => {
+    setVisible(true);
+    setIdStack(id);
+  };
+  const handleMouseLeave = (id: number) => {
+    setVisible(false);
+    setIdStack(undefined);
+  };
 
-  // const styleLight = {
-  //   boxShadow: "1px 1px 8px #747474",
-  // };
+  const { isDarkTheme } = useTheme();
 
   return (
-    <div className="fade-in-home home" id="home">
-      <div className="section-social">
-        <div className="vertical-line"></div>
-        <div className="social-media">
-        <a href="https://linkedin.com/in/zobel-ulrich-nguening-tchomgui-825a01224/">
-            {" "}
-            <i class="icn fa fa-linkedin" aria-hidden="true"></i>
-          </a>
-          <a href="https://wa.me/237697451979" target="_blank"
-            rel="noopener noreferrer">
-            {" "}
-            <i class="icn fa fa-whatsapp" aria-hidden="true"></i>
-          </a>
-          <a href="mailto:zobel.tchomgui@gmail.com" target="_blank"
-            rel="noopener noreferrer">
-            {" "}
-            <i class="icn fa fa-google" aria-hidden="true"></i>
-          </a>
-          <a
-            href="https://github.com/concepteur19"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa fa-github icn" aria-hidden="true"></i>
-          </a>
-          <a href="https://twitter.com/nguening" target="_blank"
-            rel="noopener noreferrer"> 
-            {" "}
-            <i class="icn fa fa-twitter" aria-hidden="true"></i>
-          </a>
-          
-          
+    <div className=" space-y-12 ">
+      <div className=" flex items-center space-x-8 justify-between">
+        <div className=" space-y-8 ">
+          <Title
+            title="Hey, je suis Nguening zobel Ing. Logiciel"
+            className="text-6xl"
+          />
+          <p className=" text-lg  w-[80%]">
+            {
+              "En tant qu'ingénieur logiciel spécialisé dans le développement front-end, je crée des sites web esthétiques et fonctionnels en utilisant principalement Nextjs et React. Avec une passion pour l'amélioration de mes compétences et le travail en équipe, mon objectif est d'offrir une excellente expérience utilisateur. Consultez mon portfolio pour en savoir plus. "
+            }
+          </p>
         </div>
-        <div className="vertical-line"></div>
+
+        <Image
+          src={profileImg}
+          alt=""
+          width={300}
+          height={100}
+          className={` rounded-lg border-[2px]# rotate-3 ${
+            isDarkTheme
+              ? " bg-slate-800 border-slate-700 "
+              : "bg-[#fffdfd] border-slate-200"
+          } `}
+        ></Image>
       </div>
 
-      <div className="home-container">
-        <div className="section-up">
-          <div className="left">
-            <div className="fadeIn-text">
-              Hey there It's <br /> <span>Zobel Nguening</span>
-            </div>
-            <div className="fadeIn-text2">
-              And I'm <span>Front-end Developper</span>
-            </div>
-            <div className="resume">
-              As a Sofware Engineer specializing in front-end development, I
-              create aesthetic and functional websites using principally Angular
-              and React. With a passion for improving my skills and working in
-              teams, I aim to deliver a great user experience. Check out my
-              portfolio to learn more.
-            </div>{" "}
-            <br />
-            <a href={"./cv.pdf"} target="_blank" rel="noreferrer" download={"./cv.pdf"}>
-              <Button
-                text="Get resume"
-                style={{ cursor: "pointer" }}
-                icon={
-                  <i
-                    class="fa fa-arrow-circle-right"
-                    aria-hidden="true"
-                    style={{ marginLeft: "10px" }}
-                  ></i>
-                }
-                // mouseOver={props.handleMouseOver}
-                // mouseDown={props.handleMouseDown}
-                // style={props.isDarkMode ? styleDark : styleLight}
-              />
-            </a>
-            <a href='#contact'>
-            <Button
-              text="Let's talk"
-              style={{ marginLeft: "10px", cursor: "pointer" }}
-              icon={
-                <i
-                  class="fa fa-pencil"
-                  aria-hidden="true"
-                  style={{ marginLeft: "10px" }}
-                ></i>
-              }
-              // mouseOver={props.handleMouseOver}
-              // mouseDown={props.handleMouseDown}
-              // style={props.isDarkMode ? styleDark : styleLight}
-            />
-            </a>
-          </div>{" "}
-          
-          <br />
-          <div className="img1 right">
-            <img src={img.src} alt="professional_image" className="profile-img" />
+      <div className=" space-y-8 ">
+        <Title title="Mon parcours scolaire" className="text-2xl" />
+        <div className=" space-y-8">
+          {parcoursData.map((data, id) => {
+            return (
+              <div key={id} className="flex space-x-8 space-x-12">
+                <p
+                  className={`text-base p-1 text-stone-500 ${
+                    isDarkTheme ? "text-stone-400" : ""
+                  }`}
+                >
+                  {" "}
+                  {data.year}{" "}
+                </p>
+                <div className=" flex flex-col space-y-2 ">
+                  <span className=" text-lg font-barlowMedium ">
+                    {data.certificate}
+                  </span>
+                  <span className=" text-[15px] "> {data.school} </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className=" space-y-8 ">
+        <div className=" flex justify-between items-center">
+          <Title title="Mon projets phares" className="text-2xl" />
+
+          <div
+            className={`w-max# ${
+              isDarkTheme ? "hover:bg-slate-800" : "hover:bg-slate-300"
+            } flex items-center space-x-1 cursor-pointer bg-opacity-0 hover:bg-opacity-100 transition-all duration-300 p-2 rounded-full  `}
+            onMouseEnter={() => setMouseOver(true)}
+            onMouseLeave={() => setMouseOver(false)}
+          >
+            {" "}
+            <span className={`text-base font-barlowMedium } `}>
+              Voir plus
+            </span>{" "}
+            <BsArrowRight
+              className={` ${
+                mouseOver ? " translate-x-1 transition-all duration-300 " : ""
+              } `}
+              size={18}
+            />{" "}
           </div>
         </div>
 
-        <div className="citation">
-          <div className="citation-container">
-            <span className="quote-left">❝</span> <br />
-            <span className="content">
-              Tu te mens en t'disant que tu vas tout niquer, un athée qui taffe quasi tous les jours, aura toujours plus d’opportunités ...
-            </span><br />
-            <span className="quote-right">❞</span> <br />
-            <span className="author">
-              M. Damso
-            </span>
+        <div className=" grid grid-flow-row grid-cols-3 gap-8">
+          {projectsData.map((data, id) => {
+            return (
+              <ProjectCard
+                key={id}
+                src={data.imgSrc}
+                name={data.name}
+                description={data.description}
+                projectType={data.projectType}
+                technos={data.technos}
+                colorProjectType={data.colorProjectType}
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      <div className=" space-x-8 flex items-start grid grid-flow-row grid-cols-2 ">
+        <div
+          className={` ${
+            isDarkTheme ? "border-slate-700" : ""
+          } border rounded-lg p-4 space-y-3 `}
+        >
+          <div
+            className={`flex items-center text-stone-500 space-x-2 ${
+              isDarkTheme ? "text-stone-400" : ""
+            }`}
+          >
+            {/* <Image src="" alt="12" className=" rounded-full h-5 w-5 border " ></Image> */}
+            <BsFolder size={22} />
+            <Title
+              title="Expériences Professionnelle"
+              className="text-lg font-barlowMedium "
+            />
+          </div>
+
+          <p className=" w-[23rem]# text-base">
+            {
+              "j'accumule près de 18 mois d'expérience, expérience comprenant des stages académiques, contrat de préemplois et freelance."
+            }
+          </p>
+
+          <div className=" space-y-2">
+            {experiencePro.map((data, id) => {
+              return (
+                <div key={id} className="flex space-x-8 space-x-12">
+                  <p
+                    className={`w-32 text-base p-1 text-stone-500 ${
+                      isDarkTheme ? "text-stone-400" : ""
+                    } `}
+                  >
+                    {" "}
+                    {data.structure}{" "}
+                  </p>
+                  <div className=" flex flex-col space-y- ">
+                    <span className=" text-base font-barlowMedium ">
+                      {data.poste}
+                    </span>
+                    <span className=" text-[15px] "> {data.year} </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <button
+            className={` w-full rounded-lg p-3 text-base ${ isDarkTheme? "" : "text-white" } font-barlowMedium bg-slate-800 hover:-translate-y-[3px] transition-all duration-100 flex items-center justify-center  space-x-1`}
+          >
+            {" "}
+            <span>Téléchargez mon CV</span> <BsDownload size={18} />
+          </button>
+        </div>
+        <div
+          className={` ${
+            isDarkTheme ? "border-slate-700" : ""
+          } border rounded-lg p-4 space-y-3 `}
+        >
+          <div
+            className={`flex items-center text-stone-500 space-x-2 ${
+              isDarkTheme ? "text-stone-400" : ""
+            }`}
+          >
+            {/* <Image src="" alt="12" className=" rounded-full h-5 w-5 border " ></Image> */}
+            <BsCodeSlash size={22} />
+            <Title
+              title="Ma Stack Technique"
+              className="text-lg font-barlowMedium "
+            />
+          </div>
+
+          <p className=" w-[23rem]# text-base">
+            {
+              "Je me défini comme quelqu'un qui apprend vite et qui peut etre assez polivalent , ce qui ne m'empêche pas d'avoir des technologies préférentielles."
+            }
+          </p>
+
+          <div className=" flex items-center space-x-4 relative">
+            {stack.map((data, id) => (
+              <div
+                key={id}
+                className=" cursor-pointer "
+                onMouseEnter={() => handleMouseEnter(id)}
+                onMouseLeave={() => handleMouseLeave(id)}
+              >
+                {" "}
+                {data.icone}
+                {visible && idStack === id && (
+                  <span
+                    className={`absolute -top-7 bg-slate-600 text-white p-1 px-2 rounded-full `}
+                  >
+                    {" "}
+                    {data.name}{" "}
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ const Title: React.FC<TitleProps> = ({ className, title }) => {
     <h1
     // animate={{ y: -30 }}
     // transition={{ type: "tween", duration: 0.5 }}
-    // className={className}
+    className={`font-barlowBold text-2xl text-left ${className}` }
     // {...rest} // Utilisation des props restantes
     >
       {title}
