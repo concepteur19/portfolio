@@ -20,6 +20,9 @@ const config: Config = {
         barlowLight: ['BarlowLight', 'light'],
         barlowBold: ['BarlowBold', 'bold'],
       },
+      colors: {
+        primary: "#fd7fa4"
+      }
     },
   },
   plugins: [],

@@ -53,9 +53,9 @@ const Footer = () => {
             <BiLogoGmail color="#fff" size={18} />
           </Link>
         </div>
-        <div className=" flex items-center justify-center space-x-2 ">
+        <div className=" flex items-center font-barlowMedium justify-center space-x-2 ">
           <BiCopyright size={24} />{" "}
-          <span>2023 Concepteur JS. All Rights Reserved</span>
+          <span>2024 Concepteur JS. All Rights Reserved</span>
         </div>
       </div>
     </div>

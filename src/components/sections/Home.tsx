@@ -22,6 +22,7 @@ import { IoLogoLaravel } from "react-icons/io5";
 import { TbBrandNextjs } from "react-icons/tb";
 import Image from "next/image";
 import { useTheme } from "@/contexts/themeContext";
+import Link from "next/link";
 
 const stack = [
   {
@@ -84,13 +85,13 @@ function Home({ profileImg }: { profileImg: string }) {
 
   return (
     <div className=" space-y-12 ">
-      <div className=" flex items-center space-x-8 justify-between">
+      <div className=" flex items-center space-x-6 justify-between">
         <div className=" space-y-8 ">
           <Title
             title="Hey, je suis Nguening zobel Ing. Logiciel"
-            className="text-6xl"
+            className="text-6xl w-[85%]"
           />
-          <p className=" text-lg  w-[80%]">
+          <p className=" text-lg  w-[75%]">
             {
               "En tant qu'ingénieur logiciel spécialisé dans le développement front-end, je crée des sites web esthétiques et fonctionnels en utilisant principalement Nextjs et React. Avec une passion pour l'amélioration de mes compétences et le travail en équipe, mon objectif est d'offrir une excellente expérience utilisateur. Consultez mon portfolio pour en savoir plus. "
             }
@@ -100,7 +101,7 @@ function Home({ profileImg }: { profileImg: string }) {
         <Image
           src={profileImg}
           alt=""
-          width={300}
+          width={280}
           height={100}
           className={` rounded-lg border-[2px]# rotate-3 ${
             isDarkTheme
@@ -140,28 +141,30 @@ function Home({ profileImg }: { profileImg: string }) {
         <div className=" flex justify-between items-center">
           <Title title="Mon projets phares" className="text-2xl" />
 
-          <div
-            className={`w-max# ${
-              isDarkTheme ? "hover:bg-slate-800" : "hover:bg-slate-300"
-            } flex items-center space-x-1 cursor-pointer bg-opacity-0 hover:bg-opacity-100 transition-all duration-300 p-2 rounded-full  `}
-            onMouseEnter={() => setMouseOver(true)}
-            onMouseLeave={() => setMouseOver(false)}
-          >
-            {" "}
-            <span className={`text-base font-barlowMedium } `}>
-              Voir plus
-            </span>{" "}
-            <BsArrowRight
-              className={` ${
-                mouseOver ? " translate-x-1 transition-all duration-300 " : ""
-              } `}
-              size={18}
-            />{" "}
-          </div>
+          <Link href={"/projects"}>
+            <div
+              className={`w-max# ${
+                isDarkTheme ? "hover:bg-slate-800" : "hover:bg-slate-300"
+              } flex items-center space-x-1 cursor-pointer bg-opacity-0 hover:bg-opacity-100 transition-all duration-300 p-2 rounded-full  `}
+              onMouseEnter={() => setMouseOver(true)}
+              onMouseLeave={() => setMouseOver(false)}
+            >
+              {" "}
+              <span className={`text-base font-barlowMedium } `}>
+                Voir plus
+              </span>{" "}
+              <BsArrowRight
+                className={` ${
+                  mouseOver ? " translate-x-1 transition-all duration-300 " : ""
+                } `}
+                size={18}
+              />{" "}
+            </div>
+          </Link>
         </div>
 
         <div className=" grid grid-flow-row grid-cols-3 gap-8">
-          {projectsData.map((data, id) => {
+          {projectsData.slice(0, 3).map((data, id) => {
             return (
               <ProjectCard
                 key={id}
@@ -226,7 +229,9 @@ function Home({ profileImg }: { profileImg: string }) {
           </div>
 
           <button
-            className={` w-full rounded-lg p-3 text-base ${ isDarkTheme? "" : "text-white" } font-barlowMedium bg-slate-800 hover:-translate-y-[3px] transition-all duration-100 flex items-center justify-center  space-x-1`}
+            className={` w-full rounded-lg p-3 text-base ${
+              isDarkTheme ? "" : "text-white"
+            } font-barlowMedium bg-slate-800 hover:-translate-y-[3px] transition-all duration-100 flex items-center justify-center  space-x-1`}
           >
             {" "}
             <span>Téléchargez mon CV</span> <BsDownload size={18} />

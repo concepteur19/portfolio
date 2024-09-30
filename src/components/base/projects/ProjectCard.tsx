@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { ReactNode } from "react";
 import { BsDot } from "react-icons/bs";
 import Title from "../Title";
 import { useTheme } from "@/contexts/themeContext";
 
 type ProjectCardProps = {
-  src: string;
+  src: string | StaticImageData;
   name: string;
   description?: string;
   technos?: string;
