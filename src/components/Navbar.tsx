@@ -17,7 +17,9 @@ function Navbar(props: any) {
       <Link href="/">
         <div
           className={`h-12 w-12 rounded-full border-2 p-[2px] cursor-pointer ${
-            router.pathname === "/" ? "border-primary" : ""
+            router.pathname === "/" || router.pathname === ""
+              ? "border-primary"
+              : ""
           } ${isDarkTheme ? "border-slate-400 " : " border-slate-200"}`}
         >
           {/* <span className=""> TCHOMGUI </span> */}
@@ -85,9 +87,7 @@ function Navbar(props: any) {
         ) : (
           <BsMoon
             size={14}
-            className={` m-[2px] ${
-              isDarkBottonOver ? "text-primary" : ""
-            }`}
+            className={` m-[2px] ${isDarkBottonOver ? "text-primary" : ""}`}
           />
         )}
       </button>
