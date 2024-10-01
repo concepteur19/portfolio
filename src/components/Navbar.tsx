@@ -3,17 +3,22 @@ import Link from "next/link";
 import { BsMoon, BsSun } from "react-icons/bs";
 import Image from "next/image";
 import ThemeContext from "@/contexts/themeContext";
+import { useRouter } from "next/router";
 
 function Navbar(props: any) {
   const { isDarkTheme, setIsDarkTheme } = useContext(ThemeContext);
+  const router = useRouter();
+  const isActive = (path: string) => path === router.pathname;
+  const [isDarkBottonOver, setIsDarkBottonOver] = useState(false);
 
+  console.log(router.pathname);
   return (
     <nav className=" flex items-center justify-between w-full py-8 ">
       <Link href="/">
         <div
-          className={`h-12 w-12 rounded-full border p-[2px] cursor-pointer ${
-            isDarkTheme ? "border-slate-400 " : " border-slate-200"
-          }`}
+          className={`h-12 w-12 rounded-full border-2 p-[2px] cursor-pointer ${
+            router.pathname === "/" ? "border-primary" : ""
+          } ${isDarkTheme ? "border-slate-400 " : " border-slate-200"}`}
         >
           {/* <span className=""> TCHOMGUI </span> */}
 
@@ -30,31 +35,60 @@ function Navbar(props: any) {
           isDarkTheme
             ? " bg-slate-800 border-slate-700 "
             : "bg-[#fffdfd] border-slate-200"
-        } border  rounded-full shadow-sm flex flex-col py-2 px-4 `}
+        } border  rounded-full shadow-sm flex flex-col py-2# h-12 justify-center items-center px-8 `}
       >
-        <ul className="navlist flex space-x-8 font-barlowMedium ">
-          <li className="navitem hover:opacity-60">
-            <Link href="/about">About</Link>
+        <ul className=" flex space-x-8 font-barlowMedium ">
+          <li
+            className={`hover:text-primary flex justify-center items-center ${
+              isActive("/about") && "active border-y-primary h-12 border-y "
+            } `}
+          >
+            <Link href="/about">A Propos</Link>
           </li>
-          <li className="navitem hover:opacity-60">
-            <Link href="/projects">Projects</Link>
+          <li
+            className={`hover:text-primary hover:h-12 flex justify-center items-center ${
+              isActive("/projects") && "active border-y-primary h-12 border-y "
+            } `}
+          >
+            <Link href="/projects">Projets</Link>
           </li>
-          <li className="navitem hover:opacity-60">
-            <Link href="/blog">Blog</Link>
+          <li
+            className={`hover:text-primary flex justify-center items-center ${
+              isActive("/blog") && "active border-y-primary h-12 border-y "
+            } `}
+          >
+            <Link href="/blog">Articles</Link>
           </li>
         </ul>
       </div>
 
       <button
-        className={`border p-2 rounded-full shadow-md ${
-          isDarkTheme ? " bg-slate-800 border-slate-700 " : ""
+        type="button"
+        aria-label="Toggle Dark Mode"
+        aria-expanded={isDarkTheme}
+        aria-controls="dark-mode-toggle"
+        aria-pressed={isDarkTheme}
+        onMouseEnter={() => setIsDarkBottonOver(true)}
+        onMouseLeave={() => setIsDarkBottonOver(false)}
+        className={`border p-2 rounded-full shadow-md  ${
+          isDarkTheme
+            ? " bg-slate-800 border-slate-700 hover:bg-slate-700 "
+            : " hover:bg-slate-100 "
         }`}
         onClick={() => setIsDarkTheme(!isDarkTheme)}
       >
         {isDarkTheme ? (
-          <BsSun size={18} className=" " />
+          <BsSun
+            size={18}
+            className={isDarkBottonOver ? "text-primary stroke-[0.3px]" : ""}
+          />
         ) : (
-          <BsMoon size={14} className=" text-slate-500 m-[2px] " />
+          <BsMoon
+            size={14}
+            className={` m-[2px] ${
+              isDarkBottonOver ? "text-primary" : ""
+            }`}
+          />
         )}
       </button>
     </nav>

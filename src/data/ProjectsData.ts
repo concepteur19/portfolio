@@ -65,7 +65,7 @@ const projectsData = [
     projectType: "Challenge",
     name: "Recheche de pays",
     description:
-      "petit projet fun permettant d'avoir les informations(nom, langues parlées, superficie, etc.) sur le pays de son choix.",
+      "Projet fun permettant d'avoir les informations(nom, langues parlées, superficie, etc.) sur le pays de son choix.",
     link: "https://rest-coutries-api-omega.vercel.app/",
     technos: "React, TailwindCss.",
     colorProjectType: "#EAB308",

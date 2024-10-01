@@ -118,8 +118,8 @@ function Home({ profileImg }: { profileImg: string }) {
             return (
               <div key={id} className="flex space-x-8 space-x-12">
                 <p
-                  className={`text-base p-1 text-stone-500 ${
-                    isDarkTheme ? "text-stone-400" : ""
+                  className={`text-base p-1 text-stone-500# ${
+                    isDarkTheme ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   {" "}
@@ -174,6 +174,8 @@ function Home({ profileImg }: { profileImg: string }) {
                 projectType={data.projectType}
                 technos={data.technos}
                 colorProjectType={data.colorProjectType}
+                link={data.link}
+
               />
             );
           })}
@@ -187,8 +189,8 @@ function Home({ profileImg }: { profileImg: string }) {
           } border rounded-lg p-4 space-y-3 `}
         >
           <div
-            className={`flex items-center text-stone-500 space-x-2 ${
-              isDarkTheme ? "text-stone-400" : ""
+            className={`flex items-center  space-x-2 ${
+              isDarkTheme ? "text-stone-400#" : "text-stone-500"
             }`}
           >
             {/* <Image src="" alt="12" className=" rounded-full h-5 w-5 border " ></Image> */}
@@ -205,19 +207,19 @@ function Home({ profileImg }: { profileImg: string }) {
             }
           </p>
 
-          <div className=" space-y-2">
+          <div className=" space-y-3">
             {experiencePro.map((data, id) => {
               return (
                 <div key={id} className="flex space-x-8 space-x-12">
                   <p
-                    className={`w-32 text-base p-1 text-stone-500 ${
-                      isDarkTheme ? "text-stone-400" : ""
+                    className={`w-32 text-base p-1  ${
+                      isDarkTheme ? "text-gray-400" : "text-gray-500"
                     } `}
                   >
                     {" "}
                     {data.structure}{" "}
                   </p>
-                  <div className=" flex flex-col space-y- ">
+                  <div className=" flex flex-col space-y-1 ">
                     <span className=" text-base font-barlowMedium ">
                       {data.poste}
                     </span>
@@ -231,10 +233,10 @@ function Home({ profileImg }: { profileImg: string }) {
           <button
             className={` w-full rounded-lg p-3 text-base ${
               isDarkTheme ? "" : "text-white"
-            } font-barlowMedium bg-slate-800 hover:-translate-y-[3px] transition-all duration-100 flex items-center justify-center  space-x-1`}
+            } font-barlowMedium bg-slate-700 hover:-translate-y-[3px] transition-all duration-100 flex items-center justify-center  space-x-1`}
           >
             {" "}
-            <span>Téléchargez mon CV</span> <BsDownload size={18} />
+            <span>Télécharger mon CV</span> <BsDownload size={18} />
           </button>
         </div>
         <div
@@ -243,8 +245,8 @@ function Home({ profileImg }: { profileImg: string }) {
           } border rounded-lg p-4 space-y-3 `}
         >
           <div
-            className={`flex items-center text-stone-500 space-x-2 ${
-              isDarkTheme ? "text-stone-400" : ""
+            className={`flex items-center text-stone-500# space-x-2 ${
+              isDarkTheme ? "text-stone-400#" : "text-stone-500"
             }`}
           >
             {/* <Image src="" alt="12" className=" rounded-full h-5 w-5 border " ></Image> */}
