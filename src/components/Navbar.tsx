@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 function Navbar(props: any) {
   const { isDarkTheme, setIsDarkTheme } = useContext(ThemeContext);
   const router = useRouter();
+  const pathname = router.pathname;
   const isActive = (path: string) => path === router.pathname;
   const [isDarkBottonOver, setIsDarkBottonOver] = useState(false);
 
@@ -16,11 +17,9 @@ function Navbar(props: any) {
     <nav className=" flex items-center justify-between w-full py-8 ">
       <Link href="/">
         <div
-          className={`h-12 w-12 rounded-full border-2 p-[2px] cursor-pointer ${
-            router.pathname === "/" || router.pathname === ""
-              ? "border-primary"
-              : ""
-          } ${isDarkTheme ? "border-slate-400 " : " border-slate-200"}`}
+          className={`${isDarkTheme ? "border-slate-400 " : " border-slate-200"} h-12 w-12 rounded-full border-2 p-[2px] cursor-pointer 
+             `}
+             style={ pathname === "/" ? { borderColor: "#fd7fa4" } : { } }
         >
           {/* <span className=""> TCHOMGUI </span> */}
 
@@ -75,7 +74,7 @@ function Navbar(props: any) {
         className={`border p-2 rounded-full shadow-md  ${
           isDarkTheme
             ? " bg-slate-800 border-slate-700 hover:bg-slate-700 "
-            : " hover:bg-slate-100 "
+            : " hover:bg-slate-50 "
         }`}
         onClick={() => setIsDarkTheme(!isDarkTheme)}
       >
