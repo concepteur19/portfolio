@@ -28,7 +28,7 @@ const ThemeWrapper = ({ children }: WrapperType) => {
         isDarkTheme ? "bg-slate-900 text-white" : " bg-white text-slate-900"
       }`}
     >
-      <main className={`px-4 xl:px-[8%] 2xl:px-[21.5%] w-full space-y-8`}>
+      <main className={`px-4 md:px-6 lg:px-8 xl:px-[8%] 2xl:px-[21.5%] w-full space-y-8`}>
         <Navbar src={profileImg} />
         {children}
       </main>

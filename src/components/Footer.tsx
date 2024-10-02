@@ -20,7 +20,7 @@ const Footer = () => {
       </span> */}
 
       <hr className={`${isDarkTheme ? " border-slate-700" : ""}`} />
-      <div className=" flex items-center justify-between px-4 xl:px-[8%] 2xl:px-[21.5%] w-full py-4">
+      <div className=" flex flex-col md:flex-row space-y-3 items-center justify-between px-4 xl:px-[8%] 2xl:px-[21.5%] w-full py-4">
         <div className=" flex justify-center space-x-6 ">
           <Link
             href={"https://twitter.com/nguening"}

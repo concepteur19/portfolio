@@ -71,7 +71,7 @@ function Navbar(props: any) {
         aria-pressed={isDarkTheme}
         onMouseEnter={() => setIsDarkBottonOver(true)}
         onMouseLeave={() => setIsDarkBottonOver(false)}
-        className={`border p-2 rounded-full shadow-md  ${
+        className={`border p-2 rounded-full shadow-md max-sm:absolute top-24 right-4 ${
           isDarkTheme
             ? " bg-slate-800 border-slate-700 hover:bg-slate-700 "
             : " hover:bg-slate-50 "

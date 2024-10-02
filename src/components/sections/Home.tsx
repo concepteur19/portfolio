@@ -89,9 +89,9 @@ function Home({ profileImg }: { profileImg: string }) {
         <div className=" space-y-8 ">
           <Title
             title="Hey, je suis Nguening zobel Ing. Logiciel"
-            className="text-6xl w-[85%]"
+            className="text-5xl md:text-6xl sm:w-[90%] md:w-[85%]"
           />
-          <p className=" text-lg  w-[75%]">
+          <p className=" text-lg w-[90%] md:w-[75%]">
             {
               "En tant qu'ingénieur logiciel spécialisé dans le développement front-end, je crée des sites web esthétiques et fonctionnels en utilisant principalement Nextjs et React. Avec une passion pour l'amélioration de mes compétences et le travail en équipe, mon objectif est d'offrir une excellente expérience utilisateur. Consultez mon portfolio pour en savoir plus. "
             }
@@ -103,12 +103,12 @@ function Home({ profileImg }: { profileImg: string }) {
           alt=""
           width={280}
           height={100}
-          className={` rounded-lg border-[2px]# rotate-3 ${
+          className={` hidden lg:block rounded-lg border-[2px]# rotate-3 ${
             isDarkTheme
               ? " bg-slate-800 border-slate-700 "
               : "bg-[#fffdfd] border-slate-200"
           } `}
-        ></Image>
+        />
       </div>
 
       <div className=" space-y-8 ">
@@ -116,9 +116,9 @@ function Home({ profileImg }: { profileImg: string }) {
         <div className=" space-y-8">
           {parcoursData.map((data, id) => {
             return (
-              <div key={id} className="flex space-x-8 space-x-12">
+              <div key={id} className="flex space-x-2 sm:space-x-4 md:space-x-8 lg:space-x-12">
                 <p
-                  className={`text-base p-1 text-stone-500# ${
+                  className={`text-base pt-1 text-stone-500# w-28 ${
                     isDarkTheme ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
@@ -163,7 +163,7 @@ function Home({ profileImg }: { profileImg: string }) {
           </Link>
         </div>
 
-        <div className=" grid grid-flow-row grid-cols-3 gap-8">
+        <div className=" grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-4 lg:gap-x-8">
           {projectsData.slice(0, 3).map((data, id) => {
             return (
               <ProjectCard
@@ -182,7 +182,7 @@ function Home({ profileImg }: { profileImg: string }) {
         </div>
       </div>
 
-      <div className=" space-x-8 flex items-start grid grid-flow-row grid-cols-2 ">
+      <div className=" md:space-x-4 lg:space-x-8 max-md:space-y-8 flex# items-start grid grid-flow-row md:grid-cols-2 ">
         <div
           className={` ${
             isDarkTheme ? "border-slate-700" : ""
@@ -210,9 +210,9 @@ function Home({ profileImg }: { profileImg: string }) {
           <div className=" space-y-3">
             {experiencePro.map((data, id) => {
               return (
-                <div key={id} className="flex space-x-8 space-x-12">
+                <div key={id} className="flex space-x-1 sm:space-x-4 md:space-x-8 lg:space-x-12">
                   <p
-                    className={`w-32 text-base p-1  ${
+                    className={`w-28 sm:w-32 text-base p-1  ${
                       isDarkTheme ? "text-gray-400" : "text-gray-500"
                     } `}
                   >
@@ -263,7 +263,7 @@ function Home({ profileImg }: { profileImg: string }) {
             }
           </p>
 
-          <div className=" flex items-center space-x-4 relative">
+          <div className=" flex items-center space-x-2 sm:space-x-3 lg:space-x-4 relative">
             {stack.map((data, id) => (
               <div
                 key={id}

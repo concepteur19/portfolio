@@ -14,7 +14,7 @@ const experiencePro = [
     {
         structure: "2SI-inc SA",
         year: "02-2023 - 06-2024",
-        poste: "Développeur Web et Mobile en stage"
+        poste: "Développeur Web et Mobile"
     },
 
     {
