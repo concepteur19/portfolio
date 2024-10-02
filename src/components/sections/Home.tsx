@@ -101,7 +101,7 @@ function Home({ profileImg }: { profileImg: string }) {
         <Image
           src={profileImg}
           alt=""
-          width={280}
+          width={300}
           height={100}
           className={` hidden lg:block rounded-lg border-[2px]# rotate-3 ${
             isDarkTheme
@@ -139,7 +139,7 @@ function Home({ profileImg }: { profileImg: string }) {
 
       <div className=" space-y-8 ">
         <div className=" flex justify-between items-center">
-          <Title title="Mon projets phares" className="text-2xl" />
+          <Title title="Mes projets phares" className="text-2xl" />
 
           <Link href={"/projects"}>
             <div
@@ -203,7 +203,7 @@ function Home({ profileImg }: { profileImg: string }) {
 
           <p className=" w-[23rem]# text-base">
             {
-              "j'accumule près de 18 mois d'expérience, expérience comprenant des stages académiques, contrat de préemplois et freelance."
+              "j'ai accumulé près de 18 mois d'expérience, comprenant des stages académiques, contrat de préemplois et du travail en freelance."
             }
           </p>
 
@@ -259,7 +259,7 @@ function Home({ profileImg }: { profileImg: string }) {
 
           <p className=" w-[23rem]# text-base">
             {
-              "Je me défini comme quelqu'un qui apprend vite et qui peut etre assez polivalent , ce qui ne m'empêche pas d'avoir des technologies préférentielles."
+              "Je me défini comme quelqu'un qui apprend vite et qui peut etre assez polyvalent , ce qui ne m'empêche pas d'avoir des technologies préférentielles..."
             }
           </p>
 

@@ -40,22 +40,22 @@ function Navbar(props: any) {
       >
         <ul className=" flex space-x-8 font-barlowMedium ">
           <li
-            className={`hover:text-primary flex justify-center items-center ${
-              isActive("/about") && "active border-y-primary h-12 border-y "
-            } `}
+            className={`hover:text-primary flex justify-center items-center 
+              ${isActive("/about") && "active border-y-primary# h-[47px] border-y# "} 
+            `}
           >
             <Link href="/about">A Propos</Link>
           </li>
           <li
             className={`hover:text-primary hover:h-12 flex justify-center items-center ${
-              isActive("/projects") && "active border-y-primary h-12 border-y "
+              isActive("/projects") && "active border-y-primary# h-[47px]  border-y# "
             } `}
           >
             <Link href="/projects">Projets</Link>
           </li>
           <li
             className={`hover:text-primary flex justify-center items-center ${
-              isActive("/blog") && "active border-y-primary h-12 border-y "
+              isActive("/blog") && "active border-y-primary# h-[47px]  border-y# "
             } `}
           >
             <Link href="/blog">Articles</Link>

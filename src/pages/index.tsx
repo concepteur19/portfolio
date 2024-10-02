@@ -1,5 +1,6 @@
 import { Inter, Poppins, Barlow } from "next/font/google";
-import profileImg from "@/assets/images/pro.jpeg";
+// import profileImg from "@/assets/images/pro.jpeg";
+import profileImg from "@/assets/images/pro.jpg";
 import Home from "@/components/sections/Home";
 
 const inter = Inter({ subsets: ["latin"] });
