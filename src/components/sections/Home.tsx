@@ -91,7 +91,11 @@ function Home({ profileImg }: { profileImg: string }) {
             title="Hey, je suis Nguening zobel Ing. Logiciel"
             className="text-5xl md:text-6xl sm:w-[90%] md:w-[85%]"
           />
-          <p className=" text-lg w-[90%] md:w-[75%]">
+          <p
+            className={` text-lg w-[90%] md:w-[75%] ${
+              isDarkTheme ? "text-gray-400" : "text-gray-500"
+            }`}
+          >
             {
               "En tant qu'ingénieur logiciel spécialisé dans le développement front-end, je crée des sites web esthétiques et fonctionnels en utilisant principalement Nextjs et React. Avec une passion pour l'amélioration de mes compétences et le travail en équipe, mon objectif est d'offrir une excellente expérience utilisateur. Consultez mon portfolio pour en savoir plus. "
             }
@@ -116,7 +120,10 @@ function Home({ profileImg }: { profileImg: string }) {
         <div className=" space-y-8">
           {parcoursData.map((data, id) => {
             return (
-              <div key={id} className="flex space-x-2 sm:space-x-4 md:space-x-8 lg:space-x-12">
+              <div
+                key={id}
+                className="flex space-x-2 sm:space-x-4 md:space-x-8 lg:space-x-12"
+              >
                 <p
                   className={`text-base pt-1 text-stone-500# w-28 ${
                     isDarkTheme ? "text-gray-400" : "text-gray-500"
@@ -175,7 +182,6 @@ function Home({ profileImg }: { profileImg: string }) {
                 technos={data.technos}
                 colorProjectType={data.colorProjectType}
                 link={data.link}
-
               />
             );
           })}
@@ -210,7 +216,10 @@ function Home({ profileImg }: { profileImg: string }) {
           <div className=" space-y-3">
             {experiencePro.map((data, id) => {
               return (
-                <div key={id} className="flex space-x-1 sm:space-x-4 md:space-x-8 lg:space-x-12">
+                <div
+                  key={id}
+                  className="flex space-x-1 sm:space-x-4 md:space-x-8 lg:space-x-12"
+                >
                   <p
                     className={`w-28 sm:w-32 text-base p-1  ${
                       isDarkTheme ? "text-gray-400" : "text-gray-500"

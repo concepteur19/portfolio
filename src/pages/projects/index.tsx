@@ -22,7 +22,7 @@ const Index = () => {
   };
 
   return (
-    <div className=" space-y-8">
+    <div className=" space-y-8 py-10">
       <Title
         className="text-5xl md:text-6xl sm:w-[90%] md:w-2/3"
         title="Quelques projets sur lesquels j'ai travaillé."
