@@ -85,7 +85,7 @@ function Home({ profileImg }: { profileImg: string }) {
 
   return (
     <div className=" space-y-12 ">
-      <div className=" flex items-center space-x-6 justify-between">
+      <div className=" flex items-center gap-6 justify-between">
         <div className=" space-y-8 ">
           <Title
             title="Hey, je suis Nguening zobel Ing. Logiciel"
@@ -188,7 +188,7 @@ function Home({ profileImg }: { profileImg: string }) {
         </div>
       </div>
 
-      <div className=" md:space-x-4 lg:space-x-8 max-md:space-y-8 flex# items-start grid grid-flow-row md:grid-cols-2 ">
+      <div className=" md:gap-x-4 lg:gap-x-8 gap-y-8 flex# items-start grid grid-flow-row md:grid-cols-2 ">
         <div
           className={` ${
             isDarkTheme ? "border-slate-700" : ""
@@ -242,7 +242,7 @@ function Home({ profileImg }: { profileImg: string }) {
           <button
             className={` w-full rounded-lg p-3 text-base ${
               isDarkTheme ? "" : "text-white"
-            } font-barlowMedium bg-slate-700 hover:-translate-y-[3px] transition-all duration-100 flex items-center justify-center  space-x-1`}
+            } font-barlowMedium bg-slate-700 hover:translate-y-[-3px] transition-all duration-100 flex items-center justify-center  space-x-1`}
           >
             {" "}
             <span>Télécharger mon CV</span> <BsDownload size={18} />

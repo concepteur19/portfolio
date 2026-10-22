@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           src={src}
           alt="projectImg"
           loading="lazy"
-          className={`w-96 h-52 border aspect-[13/8] object-cover rounded-lg
+          className={`w-96 h-52 border aspect-13/8 object-cover rounded-lg
              ${isDarkTheme ? "border-slate-700" : ""}`}
         />
         {/* </Link> */}

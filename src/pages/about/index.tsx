@@ -56,7 +56,7 @@ const Index = () => {
               : "bg-[#fffdfd] border-slate-200"
           } `}
         />
-        <div className=" flex flex-col justify-center space-y-5 ">
+        <div className=" flex flex-col justify-center space-y-5 max-lg:mt-8 ">
           <Link href={"https://twitter.com/nguening"}
               target="_blank"  className="flex space-x-2 items-center">
             <div

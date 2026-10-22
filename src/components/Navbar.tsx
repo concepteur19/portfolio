@@ -36,7 +36,7 @@ function Navbar(props: any) {
           isDarkTheme
             ? " bg-slate-800 border-slate-700 "
             : "bg-[#fffdfd] border-slate-200"
-        } border  rounded-full shadow-sm flex flex-col py-2# h-12 justify-center items-center px-8 `}
+        } border  rounded-full shadow-xs flex flex-col py-2# h-12 justify-center items-center px-8 `}
       >
         <ul className=" flex space-x-8 font-barlowMedium ">
           <li
