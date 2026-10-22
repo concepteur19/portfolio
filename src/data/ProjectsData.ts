@@ -1,12 +1,12 @@
 import img1 from "../assets/images/icons/logo.svg";
 import img11 from "../assets/images/subscribe.png";
-import img2 from "../assets/images/loteryEC.PNG";
+import img2 from "../assets/images/loteryEC.png";
 import img3 from "../assets/images/icons/Logo Initiale ABN vert citron.png";
 import img33 from "../assets/images/abn.png";
 import img4 from "../assets/images/icons/clickSchool.png";
-import img5 from "../assets/images/icons/countryico.PNG";
+import img5 from "../assets/images/icons/countryico.png";
 import img55 from "../assets/images/restcountry.png";
-import img6 from "../assets/images/icons/formstep.PNG"
+import img6 from "../assets/images/icons/formstep.png"
 import img7 from "../assets/images/icons/logo.png"
 import img77 from "../assets/images/foodanim.png"
 import img8 from "../assets/images/icons/RedBlackWhite1.png"
