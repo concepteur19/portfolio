@@ -1,22 +1,42 @@
-import { Inter, Poppins, Barlow } from "next/font/google";
-// import profileImg from "@/assets/images/pro.jpeg";
-import profileImg from "@/assets/images/pro.jpg";
-import Home from "@/components/sections/Home";
+import fs from "node:fs";
+import path from "node:path";
+import type { GetStaticProps } from "next";
+import Home, { type HomeProps } from "@/components/sections/Home";
+import {
+  fillExperience,
+  getCurrentRole,
+  getEducation,
+  getExperienceSummary,
+  getExperiences,
+  getProfile,
+  getSkillGroups,
+} from "@/content";
 
-const inter = Inter({ subsets: ["latin"] });
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-});
-const barlow = Barlow({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-});
+export const getStaticProps: GetStaticProps<HomeProps> = () => {
+  const profile = getProfile();
 
-export default function index() {
-  return (
-    <div className={``}>
-      <Home profileImg={profileImg.src} />
-    </div>
-  );
+  const cvFile = path.join(process.cwd(), "public", profile.cv.path);
+  if (!fs.existsSync(cvFile)) {
+    throw new Error(`CV introuvable : public${profile.cv.path}`);
+  }
+
+  const summary = getExperienceSummary(new Date());
+
+  return {
+    props: {
+      profile,
+      tagline: fillExperience(profile.tagline, summary.label),
+      currentRole: getCurrentRole(),
+      experiences: getExperiences(),
+      education: getEducation(),
+      skillGroups: getSkillGroups(),
+      experienceLabel: summary.label,
+    },
+    // Regenerated daily on Vercel so the experience duration stays current.
+    revalidate: 86400,
+  };
+};
+
+export default function Index(props: HomeProps) {
+  return <Home {...props} />;
 }

@@ -1,0 +1,87 @@
+import type { ExperienceInput } from "./schema";
+
+export const experiences = [
+  {
+    id: "ingsi-orange",
+    role: "Développeur d'Applications Fullstack",
+    organization: "INGSi (Sprint Pay)",
+    client: "Orange Cameroun, Digital Factory",
+    location: "Douala",
+    start: "2025-09",
+    achievements: [
+      "Développement et évolution des WebViews commerciales de la super app MaxIt (Orange Bonus, BIM, Sembewoila, Homebox, Univers Premium) et du frontend des mini apps Univers Jeunes et Résultats officiels.",
+      "Migration de microservices ASP.NET Core de Kubernetes vers OpenShift : Routes, Services et ports de conteneurs.",
+      "Mises en production avec l'équipe d'exploitation (RUN) et supervision : tableaux de bord Grafana sur OpenShift, KPI d'engagement suivis sur Matomo.",
+    ],
+    section: "main",
+  },
+  {
+    id: "phibrain",
+    role: "Co-fondateur et Développeur Fullstack",
+    organization: "PhiBrain Inc SARL",
+    location: "Douala",
+    start: "2023-02",
+    achievements: [
+      "Analyse, conception (UML, Merise) et développement de Clickschool, plateforme de gestion scolaire (React, Laravel) : authentification, rôles, notes et bulletins, suivi des élèves par les parents.",
+      "Recueil des besoins clients, rédaction des cahiers des charges, contrats et guides utilisateurs.",
+    ],
+    section: "main",
+  },
+  {
+    id: "happyness",
+    role: "Développeur Web",
+    organization: "Happyness SARL",
+    location: "Douala",
+    start: "2024-07",
+    end: "2025-01",
+    achievements: [
+      "Développement de fonctionnalités React et Redux et intégration des API d'une application de digitalisation ; documentation utilisateur.",
+    ],
+    section: "main",
+  },
+  {
+    id: "teaching",
+    role: "Enseignant d'informatique",
+    organization: "Collèges et lycées",
+    location: "Douala",
+    start: "2024-02",
+    end: "2025-05",
+    achievements: [
+      "Enseignement de l'informatique et accompagnement des apprenants : pédagogie, vulgarisation technique et communication.",
+    ],
+    section: "main",
+  },
+  {
+    id: "2si",
+    role: "Développeur Web Junior, après un stage Mobile et Web",
+    organization: "2SI-Inc SA",
+    location: "Douala",
+    start: "2023-02",
+    end: "2024-02",
+    achievements: [
+      "Développement du frontend Angular de 3 applications clientes : location de véhicules et de logements (Kahak Residency), gestion de loterie, suivi de patients.",
+      "Conception de l'architecture fonctionnelle de ces applications et maintenance des applications internes, en méthode Agile.",
+    ],
+    section: "main",
+  },
+  {
+    id: "gloom",
+    role: "Développeur web (stage)",
+    organization: "Gloom SARL",
+    location: "Douala",
+    start: "2022-07",
+    end: "2022-08",
+    achievements: [],
+    section: "early",
+  },
+  {
+    id: "lugar",
+    role: "Développeur web (stage)",
+    organization: "LUGAR SARL",
+    location: "Douala",
+    start: "2021-07",
+    end: "2021-08",
+    achievements: [],
+    section: "early",
+  },
+] satisfies ExperienceInput[];

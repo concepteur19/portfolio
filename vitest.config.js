@@ -1,8 +1,10 @@
-import config from './vite.config';
+import path from 'node:path';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-    plugins: [...config.plugins],
+    resolve: {
+        alias: { '@': path.resolve(__dirname, 'src') },
+    },
     test: {
         globals: true,
     }
