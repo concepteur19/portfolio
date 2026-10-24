@@ -91,7 +91,7 @@ Un visiteur qui utilise un lecteur d'écran, ou un moteur de recherche, parcourt
 - **FR-005**: La durée d'expérience et l'année du pied de page MUST être calculées, jamais écrites en dur.
 - **FR-006**: L'identité affichée MUST être unique sur tout le site (nom complet ; « Concepteur JS » retiré ou présenté comme pseudonyme GitHub).
 - **FR-007**: Le menu MUST ne contenir que des entrées menant à une page existante ; « Articles » est masqué jusqu'à la livraison de la spec 007.
-- **FR-008**: Le bouton « Télécharger mon CV » MUST télécharger le CV en vigueur ; le fichier publié ne contient pas le numéro de téléphone (constitution, principe VII).
+- **FR-008**: Le bouton « Télécharger mon CV » MUST télécharger le CV générique en vigueur. Le numéro de téléphone peut y figurer, mais n'apparaît dans aucune page du site ; les métadonnées du PDF ne mentionnent aucune candidature (constitution 1.1.0, principe VII).
 - **FR-009**: Une carte de projet MUST avoir une seule zone cliquable menant à une seule destination ; les projets marqués non visibles ou sans destination ni contenu MUST être masqués.
 - **FR-010**: Les icônes et textes MUST respecter un contraste WCAG AA dans les deux thèmes.
 - **FR-011**: Le thème MUST suivre la préférence système à la première visite, mémoriser le choix manuel et s'appliquer sans clignotement.
@@ -121,7 +121,7 @@ Un visiteur qui utilise un lecteur d'écran, ou un moteur de recherche, parcourt
 ## Assumptions
 
 - Le contenu de référence est le CV « NGUENING TCHOMGUI Zobel Ulrich CV-générique », repris dans `docs/career-timeline.md`. Les CV ciblés pour une candidature précise n'en sont pas la source.
-- La version publique du CV est le CV générique sans le numéro de téléphone, fournie par Zobel.
+- La version publique du CV est le CV générique fourni par Zobel, numéro inclus, avec des métadonnées neutres (titre et auteur).
 - La refonte visuelle (ordre complet de l'accueil, menu mobile, animations) relève de la spec 004 ; cette spec ne déplace que la section Formation et corrige les défauts.
 - La migration Next 16 / Tailwind 4 de la branche `test/next-16` est le point de départ.
 - Les projets ne sont touchés ici que pour corriger les défauts ; leur nouveau modèle relève de la spec 002.

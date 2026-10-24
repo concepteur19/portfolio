@@ -21,7 +21,7 @@ Le menu ne contient que `/about` et `/projects`. `/blog` n'existe pas et n'est r
 |---|---|
 | URL | `/cv/zobel-nguening-cv.pdf` (stable, suivie par la spec 003) |
 | Nom de téléchargement | `Zobel-Nguening-CV.pdf` |
-| Contenu | CV générique sans numéro de téléphone (principe VII) |
+| Contenu | CV générique, numéro inclus ; métadonnées neutres, sans mention de candidature (principe VII, 1.1.0) |
 | Absence du fichier | le build échoue : `CV introuvable : public/cv/zobel-nguening-cv.pdf` |
 
 ## Thème

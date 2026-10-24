@@ -59,8 +59,8 @@
   - le bouton devient un lien `<a href="/cv/zobel-nguening-cv.pdf" download="Zobel-Nguening-CV.pdf">` ;
   - `getStaticProps` de l'accueil vérifie que le fichier existe et lève une erreur explicite sinon, ce qui fait échouer le build ;
   - le chemin et le nom de téléchargement viennent de `profile.ts`.
-- **Source du fichier**: le CV générique sans numéro de téléphone, fourni par Zobel (dépendance D1 du plan).
-- **Contrôle « pas de téléphone »**: vérification manuelle (quickstart). Le texte d'un PDF est souvent compressé ; un parseur PDF pour un seul contrôle est rejeté (principe VI).
+- **Source du fichier**: le CV générique fourni par Zobel (dépendance D1 du plan), numéro inclus depuis l'amendement 1.1.0 de la constitution. Ses métadonnées sont réécrites (titre « CV Zobel Nguening, Ingénieur Logiciel Fullstack », auteur « Zobel Nguening ») pour ne révéler aucune candidature.
+- **Contrôle du fichier**: vérification manuelle (quickstart) que c'est bien le CV générique et que ses propriétés ne citent aucune candidature. Un parseur PDF dans le projet pour un seul contrôle est rejeté (principe VI).
 - **Alternatives considered**: lien vers Google Drive. Rejeté : adresse instable, hors du dépôt, non mesurable.
 
 ## R6. Titres et sémantique (FR-012)

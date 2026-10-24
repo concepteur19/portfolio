@@ -37,7 +37,7 @@ Approche technique :
 
 **Constraints**:
 - aucun flash de thème ;
-- aucun numéro de téléphone publié (VII) ;
+- aucun numéro de téléphone dans les pages ni dans le contenu du site ; il figure seulement dans le CV PDF (VII, constitution 1.1.0) ;
 - contraste WCAG AA dans les deux thèmes ;
 - aucun texte avec tiret long.
 
@@ -48,7 +48,7 @@ Approche technique :
 - composants modifiés : `_app`, `_document`, `Navbar`, `Footer`, `Home`, `about`, `projects`, `ProjectCard`, `Title`, `themeContext`.
 
 **Dépendances externes**:
-- **D1** : le PDF du CV générique sans numéro de téléphone, fourni par Zobel, à déposer dans `public/cv/zobel-nguening-cv.pdf`. Sans lui, le build échoue, comme prévu par l'edge case de la spec.
+- **D1** : le PDF du CV générique, fourni par Zobel, métadonnées neutres, à déposer dans `public/cv/zobel-nguening-cv.pdf`. Sans lui, le build échoue, comme prévu par l'edge case de la spec.
 
 ## Constitution Check
 
@@ -62,7 +62,7 @@ Approche technique :
 | IV. Mobile-first, accessible, rapide | Un `h1` par page, `lang="fr"`, textes alternatifs, `aria-label`, contrastes AA mesurés (R6, R9, R13) ; aucune image ni JS lourd ajouté | ✅ |
 | V. Visible et mesurable | Hors périmètre (spec 003). L'URL du CV est stable pour la mesure des téléchargements | ✅ (préparé) |
 | VI. Simple d'abord | Une seule dépendance ajoutée (`zod`) ; pas de `next-themes`, pas de parseur PDF ; ISR natif plutôt qu'une tâche planifiée | ✅ |
-| VII. Confidentialité | Schéma `Profile` sans champ téléphone ; CV public sans téléphone ; réalisations Orange décrites au niveau produit, sans chiffres internes ni détail d'architecture | ✅ |
+| VII. Confidentialité | Schéma `Profile` sans champ téléphone ; téléphone seulement dans le CV PDF (amendement 1.1.0), métadonnées du PDF neutres ; réalisations Orange décrites au niveau produit, sans chiffres internes ni détail d'architecture | ✅ |
 | Contraintes | Next 16 Pages Router, TS strict, Tailwind 4, Vitest, Vercel, code en anglais, contenu en français | ✅ |
 
 **Re-check post-design**: les choix de [research.md](research.md), [data-model.md](data-model.md) et des [contrats](contracts/) ne créent pas de nouvel écart. Le seul écart reste celui du principe III pour les projets.

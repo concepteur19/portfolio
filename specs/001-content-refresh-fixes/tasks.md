@@ -19,7 +19,7 @@ description: "Task list for 001-content-refresh-fixes"
 
 ## Règles communes à toutes les tâches
 
-- Source du contenu : `docs/career-timeline.md` (CV générique). Aucun numéro de téléphone, aucun chiffre interne Orange, aucun détail d'architecture Orange : principe VII.
+- Source du contenu : `docs/career-timeline.md` (CV générique). Aucun numéro de téléphone dans les pages ni le contenu (il figure seulement dans le CV PDF), aucun chiffre interne Orange, aucun détail d'architecture Orange : principe VII.
 - Aucun tiret long (—) dans les textes affichés.
 - Les composants n'importent jamais `src/content/index.ts` ni `zod`. Seul `getStaticProps` des pages appelle les fonctions de lecture, ce qui garde Zod hors du bundle client. `Navbar` et `Footer` (rendus par `_app`, sans `getStaticProps`) importent directement les modules de données bruts `src/content/site.ts` et `src/content/profile.ts`.
 - Code, identifiants et commits en anglais (Conventional Commits) ; textes du site en français.
@@ -32,7 +32,7 @@ description: "Task list for 001-content-refresh-fixes"
 
 - [X] T001 Create branch `001-content-refresh-fixes` from `test/next-16` (`git checkout test/next-16 && git checkout -b 001-content-refresh-fixes`); the untracked `.specify/`, `specs/`, `docs/` and `.claude/` folders follow the working tree
 - [X] T002 Install Zod 4 as a runtime dependency (`npm install zod@^4`), updating `package.json` and `package-lock.json`
-- [ ] T003 [P] Add the public CV provided by Zobel (generic CV **without phone number**, dependency D1) at `public/cv/zobel-nguening-cv.pdf`; open it and confirm no phone number appears. Blocks T023 only.
+- [X] T003 [P] Add the generic CV provided by Zobel at `public/cv/zobel-nguening-cv.pdf` (phone number kept, constitution 1.1.0), with neutral PDF metadata (title « CV Zobel Nguening, Ingénieur Logiciel Fullstack », author « Zobel Nguening »); confirm the properties mention no job application. Blocks T023 only.
 - [X] T004 [P] Add a `@/` path alias to `vitest.config.js` (`resolve.alias: { "@": path.resolve(__dirname, "src") }`) so tests can import `@/content/...` like the app does
 
 ---
@@ -101,7 +101,7 @@ description: "Task list for 001-content-refresh-fixes"
   - each `navItems.href` maps to an existing page file (`src/pages/<path>/index.tsx` or `src/pages/<path>.tsx`) ;
   - no string in the serialized content matches a phone pattern (`/\+?237|\b6\d{2}[\s.]?\d{2}[\s.]?\d{2}[\s.]?\d{2}\b/`) ;
   - `public/cv/zobel-nguening-cv.pdf` exists.
-- [ ] T015 Run `npm test` and `npx tsc --noEmit`; both must pass before Phase 3
+- [X] T015 Run `npm test` and `npx tsc --noEmit`; both must pass before Phase 3
 
 **Checkpoint**: le contenu est validé et testé ; les pages peuvent le consommer.
 

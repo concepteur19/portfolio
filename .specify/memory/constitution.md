@@ -23,7 +23,7 @@ Chaque page a un titre, une description et une image de partage propres. Le site
 Site statique tant qu'aucune fonctionnalité n'exige un serveur. Le formulaire de contact, l'espace d'administration et le blog arrivent chacun par leur propre spec, quand le besoin est démontré. Aucune dépendance, abstraction ou dossier n'est ajouté pour un besoin futur hypothétique.
 
 ### VII. Confidentialité
-Le numéro de téléphone, l'adresse précise et tout document d'identité ne sont jamais publiés. Les projets réalisés pour un employeur ou un client (notamment en mission chez Orange Cameroun) sont décrits au niveau public du produit : pas d'URL interne, pas de capture contenant des données réelles, pas de détail d'architecture non public. En cas de doute, le projet est marqué « confidentiel » et présenté sans lien ni capture.
+L'adresse précise et tout document d'identité ne sont jamais publiés. Le numéro de téléphone n'apparaît ni dans les pages ni dans les fichiers de contenu du site ; il figure seulement dans le CV PDF téléchargeable, par choix de Zobel. Les fichiers publiés ne révèlent aucune candidature en cours (nom de fichier, métadonnées, texte). Les projets réalisés pour un employeur ou un client (notamment en mission chez Orange Cameroun) sont décrits au niveau public du produit : pas d'URL interne, pas de capture contenant des données réelles, pas de détail d'architecture non public. En cas de doute, le projet est marqué « confidentiel » et présenté sans lien ni capture.
 
 ## Constraints
 
@@ -45,4 +45,4 @@ Le numéro de téléphone, l'adresse précise et tout document d'identité ne so
 
 Cette constitution prime sur toute autre pratique. Un amendement modifie ce fichier, incrémente la version (MAJOR : principe retiré ou redéfini ; MINOR : principe ou section ajoutés ; PATCH : clarification) et explique le changement dans le message de commit. Chaque plan vérifie la conformité aux principes I à VII ; toute violation est justifiée dans la section Complexity Tracking du plan.
 
-**Version**: 1.0.0 | **Ratified**: 2026-10-22 | **Last Amended**: 2026-10-22
+**Version**: 1.1.0 | **Ratified**: 2026-10-22 | **Last Amended**: 2026-10-24

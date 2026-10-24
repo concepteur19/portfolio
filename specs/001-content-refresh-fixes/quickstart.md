@@ -5,7 +5,7 @@
 ## Prérequis
 
 - Node 22, npm.
-- Le CV public (CV générique sans téléphone) copié dans `public/cv/zobel-nguening-cv.pdf`.
+- Le CV générique copié dans `public/cv/zobel-nguening-cv.pdf`, avec des métadonnées neutres.
 - Chrome ou Edge, pour les DevTools et Lighthouse.
 
 ## 1. Vérifications automatiques
@@ -51,7 +51,7 @@ Comparer l'accueil et la page À propos avec `docs/career-timeline.md` :
 ### US2, aucune impasse
 
 - Le menu ne propose que « À propos » et « Projets ».
-- « Télécharger mon CV » télécharge `Zobel-Nguening-CV.pdf` ; ouvrir le fichier et vérifier l'absence du numéro de téléphone.
+- « Télécharger mon CV » télécharge `Zobel-Nguening-CV.pdf` ; ouvrir le fichier, vérifier que c'est le CV générique et que ses propriétés (titre, auteur) ne citent aucune candidature.
 - Sur `/projects`, chaque carte ouvre une seule destination ; la touche Tab ne s'arrête qu'une fois par carte ; aucun projet sans lien.
 - En thème clair, les icônes sociales de la page À propos sont visibles.
 
