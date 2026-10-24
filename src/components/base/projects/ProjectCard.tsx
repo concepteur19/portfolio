@@ -1,8 +1,6 @@
 import Image, { StaticImageData } from "next/image";
-import React, { ReactNode } from "react";
-import { BsDot } from "react-icons/bs";
+import React from "react";
 import Title from "../Title";
-import { useTheme } from "@/contexts/themeContext";
 import Link from "next/link";
 
 type ProjectCardProps = {
@@ -12,7 +10,7 @@ type ProjectCardProps = {
   technos?: string;
   projectType: string;
   colorProjectType: string;
-  link?: string;
+  link: string;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -24,50 +22,45 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   colorProjectType,
   link,
 }) => {
-  const { isDarkTheme } = useTheme();
   return (
-    <div className=" text-sm space-y-2 ">
-      <div className=" space-y-3 ">
-        {/* <Link href={link} target="_blank" rel="noreferrer" className=" pb-"> */}
+    <Link
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block text-sm space-y-2"
+    >
+      <div className="space-y-3">
         <Image
           src={src}
-          alt="projectImg"
+          alt=""
           loading="lazy"
-          className={`w-96 h-52 border aspect-13/8 object-cover rounded-lg
-             ${isDarkTheme ? "border-slate-700" : ""}`}
+          sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="w-96 h-52 border aspect-13/8 object-cover rounded-lg border-slate-200 dark:border-slate-700"
         />
-        {/* </Link> */}
-        <div className=" rounded-full flex items-center space-x-1 bg-slate-800 w-max py-1 px-2 ">
-          {/* <BsDot color={colorProjectType} size={24} /> */}
+        <div className="rounded-full flex items-center space-x-1 bg-slate-800 w-max py-1 px-2">
           <span
-            className={` h-2 w-2 rounded-full `}
+            className="h-2 w-2 rounded-full"
             style={{ backgroundColor: colorProjectType }}
           ></span>
-          <span className=" text-white">{projectType}</span>
+          <span className="text-white">{projectType}</span>
         </div>
       </div>
 
-      <div className=" space-y-1">
-        <div className={`text-gray-500 font-barlowMedium `}> {technos} </div>
+      <div className="space-y-1">
+        <div className="font-barlowMedium text-gray-500 dark:text-gray-400">{technos}</div>
 
-        <div className="">
+        <div>
           <Title
+            as="h3"
             title={name}
-            className={`text-lg text-stone-500# font-barlowMedium  ${
-              isDarkTheme ? "text-stone-400# " : ""
-            } `}
+            className="text-lg font-barlowMedium group-hover:text-primary-strong dark:group-hover:text-primary"
           />
-          <p
-            className={`text-[15px] font-barlowMedium  ${
-              isDarkTheme ? "text-gray-400 " : "text-gray-500"
-            } `}
-          >
-            {" "}
-            {description}{" "}
+          <p className="text-[15px] font-barlowMedium text-gray-500 dark:text-gray-400">
+            {description}
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
