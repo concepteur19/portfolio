@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
   --background-image-gradient-conic: conic-gradient(
@@ -14,6 +16,8 @@
   --font-barlowBold: BarlowBold, bold;
 
   --color-primary: #fd7fa4;
+  /* Accent text on light backgrounds: #fd7fa4 only reaches 2.4:1 on white. */
+  --color-primary-strong: #be185d;
 }
 
 /*
@@ -100,6 +104,18 @@
   font-style: normal;
 }
 
-.active{
-  color: #fd7fa4;
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+.active {
+  color: var(--color-primary-strong);
+}
+
+.dark .active {
+  color: var(--color-primary);
 }
