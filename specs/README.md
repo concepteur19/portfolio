@@ -4,7 +4,7 @@ Découpage de l'audit du 2026-10-22 en features Spec Kit. Chaque ligne devient u
 
 | # | Feature | Contenu | Priorité | Statut |
 |---|---|---|---|---|
-| 001 | `content-refresh-fixes` | Bugs bloquants (lien Articles en 404, bouton CV inactif, liens imbriqués, icônes invisibles, thème non mémorisé, résolu par une classe `dark` sans clignotement), contenu aligné sur le CV générique (10-2026), fautes, CV téléchargeable | P1 | Tâches rédigées |
+| 001 | `content-refresh-fixes` | Bugs bloquants (lien Articles en 404, bouton CV inactif, liens imbriqués, icônes invisibles, thème non mémorisé, résolu par une classe `dark` sans clignotement), contenu aligné sur le CV générique (10-2026), fautes, CV téléchargeable | P1 | Implémentée (PR #2) |
 | 002 | `project-showcase` | Modèle de projet avec liens multiples et/ou captures, cartes, page détail (étude de cas), galerie, projets mis en avant, filtres, projets confidentiels | P1 | Spec rédigée |
 | 003 | `seo-analytics` | Titres et descriptions par page, images de partage, sitemap, robots, données structurées, mesure d'audience respectueuse de la vie privée | P1 | À spécifier |
 | 004 | `ui-ux-refresh` | Nouvel ordre de l'accueil, hero avec appels à l'action, menu mobile, animations sobres, images optimisées, polices | P2 | À spécifier |

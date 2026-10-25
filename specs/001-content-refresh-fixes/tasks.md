@@ -209,9 +209,9 @@ description: "Task list for 001-content-refresh-fixes"
 
 - [X] T045 Run the full check: `npm run lint`, `npx tsc --noEmit`, `npm test`, `npm run build`
 - [X] T046 Run the build guards of [quickstart.md](quickstart.md) section 2 (missing CV, invalid date, `console.log`) and revert each temporary change
-- [ ] T047 Run the manual journeys of [quickstart.md](quickstart.md) section 3 (US1 to US4), including Lighthouse on `/`, `/about`, `/projects` in both themes; note the scores for SC-004 in the PR description
-- [ ] T048 Zobel proofreads every text of the site (SC-005) and validates the tagline and bio written in T007
-- [ ] T049 [P] Set feature 001 to « Implémentée » in `specs/README.md` and tick the resolved items of the « Incohérences à corriger sur le site actuel » section of `docs/career-timeline.md`
+- [X] T047 Run the manual journeys of [quickstart.md](quickstart.md) section 3 (US1 to US4), including Lighthouse on `/`, `/about`, `/projects` in both themes; note the scores for SC-004 in the PR description
+- [X] T048 Zobel proofreads every text of the site (SC-005) and validates the tagline and bio written in T007
+- [X] T049 [P] Set feature 001 to « Implémentée » in `specs/README.md` and tick the resolved items of the « Incohérences à corriger sur le site actuel » section of `docs/career-timeline.md`
 
 ---
 
