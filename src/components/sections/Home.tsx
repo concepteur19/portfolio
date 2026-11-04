@@ -1,13 +1,13 @@
 import React from "react";
 import Title from "@/components/base/Title";
-import ProjectCard from "../base/projects/ProjectCard";
-import projectsData, { isPublishable } from "@/data/ProjectsData";
+import ProjectCard from "@/components/projects/ProjectCard";
 import { BsArrowRight, BsCodeSlash, BsDownload, BsFolder } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
 import portrait from "@/assets/images/pro.jpg";
 import { formatPeriod } from "@/content/dates";
 import type { Education, Experience, Profile, SkillGroup } from "@/content";
+import type { ProjectView } from "@/content/projects/load";
 
 export type HomeProps = {
   profile: Profile;
@@ -17,12 +17,8 @@ export type HomeProps = {
   education: Education[];
   skillGroups: SkillGroup[];
   experienceLabel: string;
+  featuredProjects: ProjectView[];
 };
-
-const featuredProjects = projectsData
-  .filter(isPublishable)
-  .filter((project) => project.imgSrc)
-  .slice(0, 3);
 
 const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 
@@ -37,6 +33,7 @@ function Home({
   education,
   skillGroups,
   experienceLabel,
+  featuredProjects,
 }: HomeProps) {
   return (
     <div className="space-y-12">
@@ -59,43 +56,41 @@ function Home({
           src={portrait}
           alt={`Portrait de ${profile.displayName}`}
           sizes="300px"
-          priority
+          preload
           className="hidden lg:block w-[300px] h-auto rounded-lg rotate-3 bg-[#fffdfd] border-slate-200 dark:bg-slate-800 dark:border-slate-700"
         />
       </section>
 
-      <section className="space-y-8">
-        <div className="flex justify-between items-center">
-          <Title title="Mes projets phares" className="text-2xl" />
+      {featuredProjects.length > 0 && (
+        <section className="space-y-8">
+          <div className="flex justify-between items-center">
+            <Title title="Mes projets phares" className="text-2xl" />
 
-          <Link
-            href="/projects"
-            className="group flex items-center space-x-1 p-2 rounded-full transition-all duration-300 hover:bg-slate-300 dark:hover:bg-slate-800"
-          >
-            <span className="text-base font-barlowMedium">Voir plus</span>
-            <BsArrowRight
-              aria-hidden="true"
-              className="transition-all duration-300 group-hover:translate-x-1"
-              size={18}
-            />
-          </Link>
-        </div>
+            <Link
+              href="/projects"
+              className="group flex items-center space-x-1 p-2 rounded-full transition-all duration-300 hover:bg-slate-300 dark:hover:bg-slate-800"
+            >
+              <span className="text-base font-barlowMedium">Voir plus</span>
+              <BsArrowRight
+                aria-hidden="true"
+                className="transition-all duration-300 group-hover:translate-x-1"
+                size={18}
+              />
+            </Link>
+          </div>
 
-        <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-4 lg:gap-x-8">
-          {featuredProjects.map((project) => (
-            <ProjectCard
-              key={project.name}
-              src={project.imgSrc}
-              name={project.name}
-              description={project.description}
-              projectType={project.projectType}
-              technos={project.technos}
-              colorProjectType={project.colorProjectType}
-              link={project.link}
-            />
-          ))}
-        </div>
-      </section>
+          <ul className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6">
+            {featuredProjects.map((project) => (
+              <li key={project.id}>
+                <ProjectCard
+                  project={project}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <div className="md:gap-x-4 lg:gap-x-8 gap-y-8 items-start grid grid-flow-row md:grid-cols-2">
         <section className="border rounded-lg p-4 space-y-4 border-slate-200 dark:border-slate-700">

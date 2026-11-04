@@ -1,12 +1,4 @@
-declare module '*.svg' {
-  // const content: string;//React.FunctionComponent<React.SVGAttributes<SVGElement>>;
-  // export default content;
-
-  export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
-  const src: string;
-  export default src;
-}
-
+// *.svg imports are typed by next/image-types (static image object).
 declare module '*.PNG' {
   // const content: string;//React.FunctionComponent<React.SVGAttributes<SVGElement>>;
   // export default content;

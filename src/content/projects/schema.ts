@@ -59,11 +59,14 @@ const httpsUrl = z.string().refine((value) => {
   }
 }, "URL https: attendue");
 
-// Shape of a static image import (StaticImageData); extra keys such as blurDataURL are kept.
-const staticImage = z.looseObject({
+// Shape of a static image import (next/image StaticImageData), blur placeholder included.
+const staticImage = z.object({
   src: nonEmpty,
   width: z.number().positive(),
   height: z.number().positive(),
+  blurDataURL: z.string().optional(),
+  blurWidth: z.number().optional(),
+  blurHeight: z.number().optional(),
 });
 
 const paragraphs = z.union([nonEmpty, z.array(nonEmpty).min(1)]);
