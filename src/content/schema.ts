@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const yearMonth = z
+export const yearMonth = z
   .string()
   .regex(/^\d{4}-(0[1-9]|1[0-2])$/, "format attendu YYYY-MM");
 

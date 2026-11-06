@@ -1,13 +1,16 @@
 import Title from "@/components/base/Title";
-import projectsData, { isPublishable } from "@/data/ProjectsData";
-import Image from "next/image";
-import Link from "next/link";
+import ProjectCard from "@/components/projects/ProjectCard";
+import type { GetStaticProps } from "next";
 import React from "react";
-import { BiLink } from "react-icons/bi";
+import { getProjects, type ProjectView } from "@/content/projects/load";
 
-const publishedProjects = projectsData.filter(isPublishable);
+type ProjectsProps = { projects: ProjectView[] };
 
-const Index = () => {
+export const getStaticProps: GetStaticProps<ProjectsProps> = () => ({
+  props: { projects: getProjects() },
+});
+
+const Index = ({ projects }: ProjectsProps) => {
   return (
     <div className="space-y-8 py-10">
       <Title
@@ -23,34 +26,10 @@ const Index = () => {
         challenges.
       </p>
 
-      <ul className="grid grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-4 md:gap-x-6 lg:gap-x-8">
-        {publishedProjects.map((project) => (
-          <li key={project.name}>
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              href={project.link}
-              className="group block transition-all duration-300 sm:hover:rotate-3 space-y-3 rounded-lg p-4 hover:bg-gray-100 dark:hover:bg-slate-800"
-            >
-              <div className="w-14 h-14 rounded-full border flex items-center justify-center border-slate-200 dark:border-slate-700">
-                <Image
-                  src={project.logo}
-                  alt=""
-                  loading="lazy"
-                  sizes="48px"
-                  className="w-12 h-12 object-contain rounded-full"
-                />
-              </div>
-
-              <Title as="h3" title={project.name} className="text-base font-barlowMedium" />
-              <p className="text-[0.9375rem] w-72 max-w-full dark:text-gray-400">
-                {project.description}
-              </p>
-              <span className="flex items-center space-x-2 font-barlowMedium group-hover:text-primary-strong dark:group-hover:text-primary">
-                <BiLink className="rotate-90" size={16} aria-hidden="true" />
-                <span>{new URL(project.link).hostname}</span>
-              </span>
-            </Link>
+      <ul className="grid grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-6 lg:gap-x-8">
+        {projects.map((project) => (
+          <li key={project.id}>
+            <ProjectCard project={project} />
           </li>
         ))}
       </ul>

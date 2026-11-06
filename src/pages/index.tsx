@@ -11,6 +11,7 @@ import {
   getProfile,
   getSkillGroups,
 } from "@/content";
+import { getFeaturedProjects } from "@/content/projects/load";
 
 export const getStaticProps: GetStaticProps<HomeProps> = () => {
   const profile = getProfile();
@@ -31,6 +32,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = () => {
       education: getEducation(),
       skillGroups: getSkillGroups(),
       experienceLabel: summary.label,
+      featuredProjects: getFeaturedProjects(),
     },
     // Regenerated daily on Vercel so the experience duration stays current.
     revalidate: 86400,
